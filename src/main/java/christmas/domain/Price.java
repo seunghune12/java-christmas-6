@@ -27,28 +27,28 @@ public class Price {
             OutputView.printNone();
         }
     }
-//
-//    public void saleChristmasEvent(int christmasEventDiscount){
-//        if (christmasEventDiscount != 0){
-//            eventPrices.addChristBenefit(christmasEventDiscount);
-//        }
-//    }
-//
-//    public void saleStarEvent(boolean starBoolean){
-//        if(starBoolean){
-//            eventPrices.addStarBenefit(1000);
-//        }
-//    }
-//
-//    public void saleWeekdayAndWeekendEvent(Map<String, Integer> weeklyEvent){
-//        if(weeklyEvent.values() != null){
-//            eventPrices.addWeekdayAndWeekendBenefit(weeklyEvent);
-//        }
-//    }
-//
-//    public void printBenefitListAndPrice(){
-//        eventPrices.calculateBenefitList();
-//    }
+
+    public void saleChristmasEvent(int christmasEventDiscount){
+        if (christmasEventDiscount != 0){
+            eventPrices.addChristBenefit(christmasEventDiscount);
+        }
+    }
+
+    public void saleStarEvent(boolean starBoolean){
+        if(starBoolean){
+            eventPrices.addStarBenefit(1000);
+        }
+    }
+
+    public void saleWeekdayAndWeekendEvent(Map<String, Integer> weeklyEvent){
+        if(weeklyEvent.values() != null){
+            eventPrices.addWeekdayAndWeekendBenefit(weeklyEvent);
+        }
+    }
+
+    public void printBenefitListAndPrice(){
+        eventPrices.calculateBenefitList();
+    }
 
 //    public void printBenefitTotalPrice(){
 //        eventPrices.printTotalprice();

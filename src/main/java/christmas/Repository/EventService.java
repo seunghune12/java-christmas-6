@@ -16,23 +16,23 @@ public class EventService {
         this.date = date;
     }
 
-    public void saveInfo(){
+    public void saveInfo() {
         date.saveDate();
         menu.saveOrder();
     }
 
 
-    public void printFristLineAndMenus(){
+    public void printFristLineAndMenus() {
         date.printStartResultLine();
         menu.printOrderedMenus();
 
     }
 
-    public void startCalculateAndPrint(){
+    public void startCalculateAndPrint() {
         Price price = new Price(menu.calculateTotalPrice());
         runTotalPriceBeforeDiscount(price);
-        runChampagneEvent(price);
-//        runBenefitList(price);
+        runEventPrices(price);
+
 //        runTotalBenefitPrice(price);
 //        runDiscountedPrice(price);
 //        runDecemberBadge(price);
@@ -53,37 +53,35 @@ public class EventService {
 //        price.printBenefitTotalPrice();
 //    }
 
-//    private void runBenefitList(Price price){
-//        OutputView.printBenefitList();
-//        price.printBenefitListAndPrice();
-//
-//    }
+    private void runBenefitList(Price price){
+        OutputView.printBenefitList();
+        price.printBenefitListAndPrice();
 
-    private void runChampagneEvent(Price price){
+    }
+
+    private void runEventPrices(Price price) {
+        runChampagneEvent(price);
+        price.saleChristmasEvent(date.calculateChristmasEvent());
+        price.saleStarEvent(date.checkStarEvent());
+        price.saleWeekdayAndWeekendEvent(calculateWeekEvent());
+        runBenefitList(price);
+    }
+
+    private Map<String, Integer> calculateWeekEvent() {
+        Map<String, Integer> weeklyEvent = new HashMap<>();
+        String saleKind = date.checkSaleSort();
+        weeklyEvent.put(saleKind, menu.calculatedaysEvent(saleKind));
+        return weeklyEvent;
+    }
+
+    private void runChampagneEvent(Price price) {
         OutputView.printGiftMenu();
         price.printChampagneEvent();
     }
 
-    private void runTotalPriceBeforeDiscount(Price price){
+    private void runTotalPriceBeforeDiscount(Price price) {
         OutputView.printTotalPriceBeforeDiscount();
         price.printTotalPrice();
     }
-
-//    private Price calculateEvents(){
-
-
-//        price.printChampagneEvent();
-//        price.saleChristmasEvent(date.calculateChristmasEvent());
-//        price.saleStarEvent(date.checkStarEvent());
-//        price.saleWeekdayAndWeekendEvent(calculateWeekEvent());
-
-//        return price;
-//    }
-
-    private Map<String, Integer> calculateWeekEvent(){
-        Map<String, Integer> weeklyEvent = new HashMap<>();
-        String saleKind = date.checkSaleSort();
-        weeklyEvent.put(saleKind, menu.calculatedaysEvent(saleKind)) ;
-        return weeklyEvent;
-    }
 }
+
