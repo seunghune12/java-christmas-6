@@ -1,5 +1,7 @@
 package christmas.domain;
 
+import christmas.constant.Calendar;
+import christmas.constant.FoodName;
 import christmas.validator.DateValidator;
 import christmas.view.InputView;
 
@@ -13,12 +15,17 @@ public class Date {
 
 
 
-//    public void calculateChristmasEvent() {
-//        return 1000;
-//    }
+    public int calculateChristmasEvent() {
+        return this.date * 100 - 100 + 1000;
+    }
 
-    // 날짜별 할인 최대 3400
-    // 별이 있는 날짜 3, 10, 17, 24, 25, 31 1000원
+    public boolean checkStarEvent(){
+        return Calendar.isStarByDate(this.date);
+    }
+
+    public String checkSaleSort(){
+        return Calendar.getSaleSortByDate(this.date);
+    }
 
     // 디저트 3,4,5,6,7
     //     10,11,12,13,14

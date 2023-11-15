@@ -19,7 +19,14 @@ public class EventService {
     }
 
     public void calculatePrice(){
-        Price totalprice = new Price(menu.calculateTotalPrice());
+        Price price = new Price(menu.calculateTotalPrice());
+        price.saleChristmasEvent(date.calculateChristmasEvent());
+        price.saleStarEvent(date.checkStarEvent());
+    }
+
+    private int calculateWeekEvent(){
+        String saleKind = date.checkSaleSort();
+        menu.calculatedaysEvent(saleKind);
 
     }
 }

@@ -29,4 +29,22 @@ public class Menu {
 
         return totalPrice;
     }
+
+    public int calculatedaysEvent(String daySalePrice){
+        int totalSalePrice = 0;
+
+        for (Map.Entry<String, Integer> entry : menus.entrySet()) {
+            String menuName = entry.getKey();
+            int number = entry.getValue();
+
+            boolean isMatch = FoodName.isNameAndSortMatch(menuName, daySalePrice);
+
+            if(isMatch){
+                totalSalePrice += 2023 * number;
+
+            }
+        }
+
+        return totalSalePrice;
+    }
 }
