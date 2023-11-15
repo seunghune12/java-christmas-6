@@ -32,17 +32,16 @@ public class EventService {
         Price price = new Price(menu.calculateTotalPrice());
         runTotalPriceBeforeDiscount(price);
         runEventPrices(price);
-
         runTotalBenefitPrice(price);
-//        runDiscountedPrice(price);
-//        runDecemberBadge(price);
+        runDiscountedPrice(price);
+        runDecemberBadge(price);
     }
 
-//    private void runDecemberBadge(Price price){
-//        OutputView.printDecemberEventBadge();
-//        price.checkDecemberBadge();
-//    }
-//
+    private void runDecemberBadge(Price price){
+        OutputView.printDecemberEventBadge();
+        price.checkDecemberBadge();
+    }
+
     private void runDiscountedPrice(Price price) {
         OutputView.printDiscountedPrice();
         price.printDiscountedTotalPrice();

@@ -67,20 +67,20 @@ public class EventPrices {
         int discountedPrice = totalPriceBeforeDiscount - totalPrice;
         System.out.println(format.format(discountedPrice));
     }
-//
-//    public void printDecemberBadge(){
-//        if(totalPrice < 5000){
-//            OutputView.printNone();
-//            return;
-//        }else if(totalPrice < 10000) {
-//            OutputView.printStarBadge();
-//            return;
-//        }else if(totalPrice < 20000){
-//            OutputView.printTreeBadge();
-//            return;
-//        }else if(20000 <= totalPrice){
-//            OutputView.printSantaBadge();
-//            return;
-//        }
-//    }
+
+    public void printDecemberBadge(){
+        if(totalPrice < 5000){
+            OutputView.printNone();
+            return;
+        }else if(totalPrice < 10000) {
+            OutputView.printStarBadge();
+            return;
+        }else if(totalPrice < 20000){
+            OutputView.printTreeBadge();
+            return;
+        }else if(20000 <= totalPrice){
+            OutputView.printSantaBadge();
+            return;
+        }
+    }
 }
