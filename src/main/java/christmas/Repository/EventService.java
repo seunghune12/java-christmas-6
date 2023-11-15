@@ -30,10 +30,14 @@ public class EventService {
 
     public void startCalculateAndPrint(){
         Price price = calculateEvents();
-
+        printBenefitList(price);
     }
 
+    private void printBenefitList(Price price){
+        OutputView.printBenefitList();
+        price.printBenefitListAndPrice();
 
+    }
 
     private Price calculateEvents(){
         Price price = new Price(menu.calculateTotalPrice());
