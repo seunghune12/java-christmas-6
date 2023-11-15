@@ -2,6 +2,7 @@ package christmas.Repository;
 
 import christmas.domain.Date;
 import christmas.domain.Menu;
+import christmas.domain.Price;
 
 public class EventService {
     private final Menu menu;
@@ -18,6 +19,7 @@ public class EventService {
     }
 
     public void calculatePrice(){
+        Price totalprice = new Price(menu.calculateTotalPrice());
 
     }
 }
