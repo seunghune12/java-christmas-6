@@ -1,5 +1,7 @@
 package christmas.constant;
 
+import java.util.Arrays;
+
 public enum FoodName {
     MUSHROOM_SOUP("양송이수프",6000),
     TAPAS("타파스", 6000),
@@ -19,8 +21,19 @@ public enum FoodName {
 
     FoodName(String name, int price) {this.name = name; this.price = price;}
 
-    public String getname() {return name;}
+    public String getName() {
+        return name;
+    }
 
+    public int getPrice() {
+        return price;
+    }
+
+    public static String[] getAllFoodNames() {
+        return Arrays.stream(FoodName.values())
+                .map(FoodName::getName)
+                .toArray(String[]::new);
+    }
 
 
 }

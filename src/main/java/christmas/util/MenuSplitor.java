@@ -1,6 +1,8 @@
 package christmas.util;
 
+import christmas.domain.Menu;
 import christmas.validator.MenuValidator;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,11 +24,13 @@ public class MenuSplitor {
 
     public static Map<String,Integer> splitMenu(
             List<String> menues, Map<String,Integer> resultMap){
-
+        System.out.println(menues);
         try{
             for (String menu : menues) {
+                System.out.println(menu);
                 String[] parts = menu.split("-");
-                resultMap.put(parts[0], MenuValidator.validateNumber(parts[1]));
+                System.out.println(Arrays.toString(parts));
+                resultMap.put(MenuValidator.validatefoodName(parts[0]), MenuValidator.validateNumber(parts[1]));
             }
             return resultMap;
 
