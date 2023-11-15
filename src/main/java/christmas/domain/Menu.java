@@ -1,12 +1,16 @@
 package christmas.domain;
 
+import christmas.util.MenuSplitor;
 import christmas.view.InputView;
+import java.util.Map;
 
 public class Menu {
 
+    Map<String,Integer> menus;
 
-    public void saveMenus(){
-        String menues = InputView.inputMenu();
+    public void saveOrder(){
+        String order = InputView.inputMenu();
+        this.menus = MenuSplitor.splitMenus(order);
     }
 
 

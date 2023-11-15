@@ -14,7 +14,7 @@ public class EventService {
 
     public void saveInfo(){
         date.saveDate();
-        menu.saveMenu();
+        menu.saveOrder();
     }
 
     public void calculatePrice(){
