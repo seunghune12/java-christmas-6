@@ -14,9 +14,9 @@ public class EventPrices {
         this.totalPrice = 0;
     }
 
-//    public void addChampagneBenefit(int discountPrice){
-//        benefitList.put("GIFT",discountPrice);
-//    }
+    public void addChampagneBenefit(int discountPrice){
+        benefitList.put("GIFT",discountPrice);
+    }
 //
 //    public void addChristBenefit(int discountPrice){
 //        benefitList.put("CHRISTMAS", discountPrice);

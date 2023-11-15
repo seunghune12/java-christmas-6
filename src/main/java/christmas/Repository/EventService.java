@@ -31,6 +31,7 @@ public class EventService {
     public void startCalculateAndPrint(){
         Price price = new Price(menu.calculateTotalPrice());
         runTotalPriceBeforeDiscount(price);
+        runChampagneEvent(price);
 //        runBenefitList(price);
 //        runTotalBenefitPrice(price);
 //        runDiscountedPrice(price);
@@ -58,12 +59,17 @@ public class EventService {
 //
 //    }
 
+    private void runChampagneEvent(Price price){
+        OutputView.printGiftMenu();
+        price.printChampagneEvent();
+    }
+
     private void runTotalPriceBeforeDiscount(Price price){
         OutputView.printTotalPriceBeforeDiscount();
         price.printTotalPrice();
     }
 
-    private Price calculateEvents(){
+//    private Price calculateEvents(){
 
 
 //        price.printChampagneEvent();
@@ -72,7 +78,7 @@ public class EventService {
 //        price.saleWeekdayAndWeekendEvent(calculateWeekEvent());
 
 //        return price;
-    }
+//    }
 
     private Map<String, Integer> calculateWeekEvent(){
         Map<String, Integer> weeklyEvent = new HashMap<>();

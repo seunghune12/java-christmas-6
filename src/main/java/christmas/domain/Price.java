@@ -19,15 +19,14 @@ public class Price {
         System.out.println(totalPriceBeforeDiscount + "원");
     }
 
-//    public void printChampagneEvent(){
-//            OutputView.printGiftMenu();
-//        if(120000 <= totalPriceBeforeDiscount){
-//            OutputView.printChampagne();
-//            eventPrices.addChampagneBenefit(25000);
-//        } else if (totalPriceBeforeDiscount < 120000) {
-//            OutputView.printNone();
-//        }
-//    }
+    public void printChampagneEvent(){
+        if(120000 <= totalPriceBeforeDiscount){
+            OutputView.printChampagne();
+            eventPrices.addChampagneBenefit(25000);
+        } else if (totalPriceBeforeDiscount < 120000) {
+            OutputView.printNone();
+        }
+    }
 //
 //    public void saleChristmasEvent(int christmasEventDiscount){
 //        if (christmasEventDiscount != 0){
