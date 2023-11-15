@@ -3,13 +3,18 @@ package christmas.domain;
 import christmas.view.InputView;
 
 public class Menu {
-    String menu;
 
-    public void requestMenu(String menu){
-        this.menu = menu;
+
+    public void saveMenus(){
+        String menues = InputView.inputMenu();
     }
 
-    public void saveMenu(){
-        this.menu = InputView.inputMenu();
-    }
+
+
+
+
+
+    // 일~목 디저트, 금토 메인 2023원 할인
+
+
 }

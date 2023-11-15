@@ -2,13 +2,12 @@ package christmas.Repository;
 
 import christmas.domain.Date;
 import christmas.domain.Menu;
-import christmas.view.InputView;
 
-public class EventRepository {
+public class EventService {
     private final Menu menu;
     private final Date date;
 
-    public EventRepository(Menu menu, Date date) {
+    public EventService(Menu menu, Date date) {
         this.menu = menu;
         this.date = date;
     }
@@ -16,5 +15,9 @@ public class EventRepository {
     public void saveInfo(){
         date.saveDate();
         menu.saveMenu();
+    }
+
+    public void calculatePrice(){
+
     }
 }

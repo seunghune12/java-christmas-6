@@ -1,16 +1,19 @@
 package christmas.controller;
 
-import christmas.Repository.EventRepository;
-import christmas.view.InputView;
+import christmas.Repository.EventService;
 
 public class EventController {
-    private final EventRepository eventRepository;
+    private final EventService eventService;
 
-    public EventController(EventRepository eventRepository) {
-        this.eventRepository = eventRepository;
+    public EventController(EventService eventRepository) {
+        this.eventService = eventRepository;
     }
 
     public void requestInfo() {
-        eventRepository.saveInfo();
+        eventService.saveInfo();
+    }
+
+    public void calculateEvent() {
+        eventService.calculatePrice();
     }
 }

@@ -1,6 +1,6 @@
 package christmas.config;
 
-import christmas.Repository.EventRepository;
+import christmas.Repository.EventService;
 import christmas.controller.EventController;
 import christmas.domain.Date;
 import christmas.domain.EventPlanner;
@@ -16,8 +16,8 @@ public class Dependency {
         return new EventController(eventRepository());
     }
 
-    public static EventRepository eventRepository(){
-        return new EventRepository(menu(),date());
+    public static EventService eventRepository(){
+        return new EventService(menu(),date());
     }
 
     public static Menu menu(){

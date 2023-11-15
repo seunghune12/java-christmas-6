@@ -11,7 +11,7 @@ public class EventPlanner {
 
     public void run(){
         startRequestInfo();
-        calculateBenefit();
+        calculateEvents();
         printOrderResult();
     }
 
@@ -19,8 +19,8 @@ public class EventPlanner {
         eventController.requestInfo();
     }
 
-    private void calculateBenefit(){
-
+    private void calculateEvents(){
+        eventController.calculateEvent();
     }
 
     private void printOrderResult(){
