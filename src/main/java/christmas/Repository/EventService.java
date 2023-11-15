@@ -48,10 +48,10 @@ public class EventService {
 //        price.printDiscountedTotalPrice();
 //    }
 //
-//    private void runTotalBenefitPrice(Price price){
-//        OutputView.printTotalDiscountPrice();
-//        price.printBenefitTotalPrice();
-//    }
+    private void runTotalBenefitPrice(Price price){
+        OutputView.printTotalDiscountPrice();
+        price.printBenefitTotalPrice();
+    }
 
     private void runBenefitList(Price price){
         OutputView.printBenefitList();

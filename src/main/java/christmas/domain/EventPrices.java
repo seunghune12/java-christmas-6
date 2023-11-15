@@ -57,10 +57,10 @@ public class EventPrices {
         this.totalPrice += price;
     }
 
-//    public void printTotalprice(){
-//        DecimalFormat format = new DecimalFormat("-###,###원");
-//        System.out.println(format.format(totalPrice));
-//    }
+    public void printTotalprice(){
+        DecimalFormat format = new DecimalFormat("-###,###원");
+        System.out.println(format.format(totalPrice));
+    }
 //
 //    public void printDiscountedPrice(int totalPriceBeforeDiscount){
 //        DecimalFormat format = new DecimalFormat("-###,###원");

@@ -50,10 +50,9 @@ public class Price {
         eventPrices.calculateBenefitList();
     }
 
-//    public void printBenefitTotalPrice(){
-//        eventPrices.printTotalprice();
-//
-//    }
+    public void printBenefitTotalPrice(){
+        eventPrices.printTotalprice();
+    }
 //
 //    public void printDiscountedTotalPrice(){
 //        eventPrices.printDiscountedPrice(totalPriceBeforeDiscount);
