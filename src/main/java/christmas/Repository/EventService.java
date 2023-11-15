@@ -33,7 +33,7 @@ public class EventService {
         runTotalPriceBeforeDiscount(price);
         runEventPrices(price);
 
-//        runTotalBenefitPrice(price);
+        runTotalBenefitPrice(price);
 //        runDiscountedPrice(price);
 //        runDecemberBadge(price);
     }
@@ -43,11 +43,11 @@ public class EventService {
 //        price.checkDecemberBadge();
 //    }
 //
-//    private void runDiscountedPrice(Price price) {
-//        OutputView.printDiscountedPrice();
-//        price.printDiscountedTotalPrice();
-//    }
-//
+    private void runDiscountedPrice(Price price) {
+        OutputView.printDiscountedPrice();
+        price.printDiscountedTotalPrice();
+    }
+
     private void runTotalBenefitPrice(Price price){
         OutputView.printTotalDiscountPrice();
         price.printBenefitTotalPrice();

@@ -53,10 +53,10 @@ public class Price {
     public void printBenefitTotalPrice(){
         eventPrices.printTotalprice();
     }
-//
-//    public void printDiscountedTotalPrice(){
-//        eventPrices.printDiscountedPrice(totalPriceBeforeDiscount);
-//    }
+
+    public void printDiscountedTotalPrice(){
+        eventPrices.printDiscountedPrice(totalPriceBeforeDiscount);
+    }
 //
 //    public void checkDecemberBadge(){
 //        eventPrices.printDecemberBadge();
