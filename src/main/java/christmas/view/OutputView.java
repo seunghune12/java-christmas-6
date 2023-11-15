@@ -32,15 +32,27 @@ public class OutputView {
         System.out.println("<혜택 내역>");
     }
 
-    public static void printTotalBenefitPrice(){
+    public static void printTotalDiscountPrice(){
         System.out.println("<총혜택 금액>");
     }
 
-    public static void printDiscountPrice(){
+    public static void printDiscountedPrice(){
         System.out.println("<할인 후 예상 결제 금액>");
     }
 
-    public static void printDecemverEventBadge(){
+    public static void printDecemberEventBadge(){
         System.out.println("<12월 이벤트 배지>");
+    }
+
+    public static void printStarBadge(){
+        System.out.println("별");
+    }
+
+    public static void printTreeBadge(){
+        System.out.println("트리");
+    }
+
+    public static void printSantaBadge(){
+        System.out.println("산타");
     }
 }

@@ -29,25 +29,49 @@ public class EventService {
     }
 
     public void startCalculateAndPrint(){
-        Price price = calculateEvents();
-        printBenefitList(price);
+        Price price = new Price(menu.calculateTotalPrice());
+        runTotalPriceBeforeDiscount(price);
+//        runBenefitList(price);
+//        runTotalBenefitPrice(price);
+//        runDiscountedPrice(price);
+//        runDecemberBadge(price);
     }
 
-    private void printBenefitList(Price price){
-        OutputView.printBenefitList();
-        price.printBenefitListAndPrice();
+//    private void runDecemberBadge(Price price){
+//        OutputView.printDecemberEventBadge();
+//        price.checkDecemberBadge();
+//    }
+//
+//    private void runDiscountedPrice(Price price) {
+//        OutputView.printDiscountedPrice();
+//        price.printDiscountedTotalPrice();
+//    }
+//
+//    private void runTotalBenefitPrice(Price price){
+//        OutputView.printTotalDiscountPrice();
+//        price.printBenefitTotalPrice();
+//    }
 
+//    private void runBenefitList(Price price){
+//        OutputView.printBenefitList();
+//        price.printBenefitListAndPrice();
+//
+//    }
+
+    private void runTotalPriceBeforeDiscount(Price price){
+        OutputView.printTotalPriceBeforeDiscount();
+        price.printTotalPrice();
     }
 
     private Price calculateEvents(){
-        Price price = new Price(menu.calculateTotalPrice());
-        price.printTotalPrice();
-        price.printChampagneEvent();
-        price.saleChristmasEvent(date.calculateChristmasEvent());
-        price.saleStarEvent(date.checkStarEvent());
-        price.saleWeekdayAndWeekendEvent(calculateWeekEvent());
 
-        return price;
+
+//        price.printChampagneEvent();
+//        price.saleChristmasEvent(date.calculateChristmasEvent());
+//        price.saleStarEvent(date.checkStarEvent());
+//        price.saleWeekdayAndWeekendEvent(calculateWeekEvent());
+
+//        return price;
     }
 
     private Map<String, Integer> calculateWeekEvent(){
