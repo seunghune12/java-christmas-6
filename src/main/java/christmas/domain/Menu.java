@@ -3,6 +3,9 @@ package christmas.domain;
 import christmas.constant.FoodName;
 import christmas.util.MenuSplitor;
 import christmas.view.InputView;
+import christmas.view.OutputView;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class Menu {
@@ -22,7 +25,7 @@ public class Menu {
             String menuName = entry.getKey();
             int quantity = entry.getValue();
 
-            // FoodName 열거형에서 해당 메뉴의 가격을 가져와서 총 가격에 더함
+
             int menuPrice = FoodName.getPriceByName(menuName);
             totalPrice += menuPrice * quantity;
         }
@@ -41,10 +44,18 @@ public class Menu {
 
             if(isMatch){
                 totalSalePrice += 2023 * number;
-
             }
         }
 
         return totalSalePrice;
+    }
+
+    public void printOrderedMenus(){
+        OutputView.printOrderedMenus();
+
+        for (Map.Entry<String, Integer> entry : menus.entrySet()) {
+            System.out.printf(entry.getKey()+" "+entry.getValue()+"개");
+        }
+
     }
 }

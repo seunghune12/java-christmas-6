@@ -18,15 +18,27 @@ public class EventService {
         menu.saveOrder();
     }
 
+
+    public void printFristLineAndMenus(){
+        date.printStartResultLine();
+        menu.printOrderedMenus();
+
+    }
+
     public void calculatePrice(){
         Price price = new Price(menu.calculateTotalPrice());
         price.saleChristmasEvent(date.calculateChristmasEvent());
         price.saleStarEvent(date.checkStarEvent());
+        price.saleWeekdayAndWeekendEvent(calculateWeekEvent());
+
+    }
+
+    public void printCalculateResult(){
+
     }
 
     private int calculateWeekEvent(){
         String saleKind = date.checkSaleSort();
-        menu.calculatedaysEvent(saleKind);
-
+        return menu.calculatedaysEvent(saleKind);
     }
 }

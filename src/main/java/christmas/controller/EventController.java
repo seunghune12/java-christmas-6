@@ -13,7 +13,15 @@ public class EventController {
         eventService.saveInfo();
     }
 
+    public void startPrintingResult(){
+        eventService.printFristLineAndMenus();
+    }
+
     public void calculateEvent() {
         eventService.calculatePrice();
+    }
+
+    public void printEventResult(){
+
     }
 }

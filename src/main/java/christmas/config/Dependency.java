@@ -3,7 +3,7 @@ package christmas.config;
 import christmas.Repository.EventService;
 import christmas.controller.EventController;
 import christmas.domain.Date;
-import christmas.domain.EventPlanner;
+import christmas.EventPlanner;
 import christmas.domain.Menu;
 
 public class Dependency {

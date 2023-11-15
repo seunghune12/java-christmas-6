@@ -1,4 +1,4 @@
-package christmas.domain;
+package christmas;
 
 import christmas.controller.EventController;
 
@@ -11,19 +11,22 @@ public class EventPlanner {
 
     public void run(){
         startRequestInfo();
-        calculateEvents();
-        printOrderResult();
+        startOrder();
+        startEventCalculate();
+        printRecipt();
     }
 
     private void startRequestInfo(){
         eventController.requestInfo();
     }
 
-    private void calculateEvents(){
+    private void startOrder(){eventController.startPrintingResult();}
+
+    private void startEventCalculate(){
         eventController.calculateEvent();
     }
 
-    private void printOrderResult(){
+    private void printRecipt(){eventController.printEventResult();
 
     }
 }
