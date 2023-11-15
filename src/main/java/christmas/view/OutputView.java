@@ -4,7 +4,11 @@ package christmas.view;
 
 public class OutputView {
     public static void printResultStart(int orderDay){
-        System.out.printf("12월 " + orderDay + "일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!");
+        System.out.println("12월 " + orderDay + "일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!");
+        System.out.println();
+    }
+
+    public static void printEnter(){
         System.out.println();
     }
 
@@ -55,4 +59,6 @@ public class OutputView {
     public static void printSantaBadge(){
         System.out.println("산타");
     }
+
+
 }

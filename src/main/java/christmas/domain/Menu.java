@@ -4,14 +4,14 @@ import christmas.constant.FoodName;
 import christmas.util.MenuSplitor;
 import christmas.view.InputView;
 import christmas.view.OutputView;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 public class Menu {
-
     Map<String,Integer> menus;
 
+    public Menu(Map<String, Integer> menus) {
+        this.menus = menus;
+    }
 
     public void saveOrder(){
         String order = InputView.inputMenu();
@@ -51,9 +51,11 @@ public class Menu {
     public void printOrderedMenus(){
         OutputView.printOrderedMenus();
 
-        for (Map.Entry<String, Integer> entry : menus.entrySet()) {
+        for (Map.Entry<String, Integer> entry : this.menus.entrySet()) {
             System.out.printf(entry.getKey()+" "+entry.getValue()+"개");
+            System.out.println();
         }
 
+        OutputView.printEnter();
     }
 }

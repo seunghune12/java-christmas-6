@@ -17,26 +17,24 @@ public class MenuSplitor {
             return splitMenu(menues, resultMap);
 
         }catch(IllegalArgumentException e){
-            System.out.println(",로 나눌수 없는 형식!");
+            throw new IllegalArgumentException("");
         }
-        return null;
+
     }
 
     public static Map<String,Integer> splitMenu(
-            List<String> menues, Map<String,Integer> resultMap){
-        System.out.println(menues);
+        List<String> menues, Map<String,Integer> resultMap){
+
         try{
             for (String menu : menues) {
-                System.out.println(menu);
                 String[] parts = menu.split("-");
-                System.out.println(Arrays.toString(parts));
                 resultMap.put(MenuValidator.validatefoodName(parts[0]), MenuValidator.validateNumber(parts[1]));
             }
             return resultMap;
 
         }catch(IllegalArgumentException e){
-            System.out.println("-로 나눌 수 없는 형식");
+            throw new IllegalArgumentException();
         }
-        return null;
+
     }
 }

@@ -11,6 +11,7 @@ public class Price {
 
     public Price(int totalPrice) {
         this.totalPriceBeforeDiscount = totalPrice;
+        this.eventPrices = new EventPrices();
 
     }
 

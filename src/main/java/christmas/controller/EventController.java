@@ -1,6 +1,6 @@
 package christmas.controller;
 
-import christmas.Repository.EventService;
+import christmas.service.EventService;
 
 public class EventController {
     private final EventService eventService;

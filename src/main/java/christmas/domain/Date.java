@@ -11,7 +11,7 @@ public class Date {
 
     public void saveDate(){
         String input = InputView.inputDate();
-        this.date = DateValidator.dalivateDate(input);
+        this.date = DateValidator.validateDate(input);
     }
 
 

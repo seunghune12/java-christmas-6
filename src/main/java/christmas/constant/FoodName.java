@@ -11,11 +11,11 @@ public enum FoodName {
     BARBECUE_RIBS("바베큐립", 6000,"MAIN"),
     SEAFOOD_PASTA("해산물파스타", 6000,"MAIN"),
     CHRISTMAS_PASTA("크리스마스파스타", 6000,"MAIN"),
-    CHOCOLATE_CAKE("초콜케이크", 6000,"DESSERT"),
+    CHOCOLATE_CAKE("초코케이크", 6000,"DESSERT"),
     ICE_CREAM("아이스크림", 6000,"DESSERT"),
-    ZERO_COLA("제로콜라", 6000,"Drink"),
-    RED_WINE("레드와인", 6000,"Drink"),
-    CHAMPAGNE("샴페인", 6000,"Drink");
+    ZERO_COLA("제로콜라", 6000,"DRINK"),
+    RED_WINE("레드와인", 6000,"DRINK"),
+    CHAMPAGNE("샴페인", 6000,"DRINK");
 
     private final String name;
     private final int price;
@@ -51,8 +51,8 @@ public enum FoodName {
 
     public static boolean isNameAndSortMatch(String name, String sort) {
         return Arrays.stream(values())
-                .filter(foodName -> foodName.getName().equals(name))
-                .anyMatch(foodName -> foodName.getSort().equals(sort));
+                .filter(foodName -> foodName.getSort().equals(sort))
+                .anyMatch(foodName -> foodName.getName().equals(name));
     }
 
 

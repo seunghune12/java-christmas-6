@@ -7,10 +7,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class EventPrices {
-    Map<String,Integer> benefitList = new HashMap<>();
+    Map<String,Integer> benefitList;
     int totalPrice;
 
     public EventPrices() {
+
+        this.benefitList = new HashMap<>();
         this.totalPrice = 0;
     }
 
@@ -27,16 +29,18 @@ public class EventPrices {
     }
 
     public void addWeekdayAndWeekendBenefit(Map<String, Integer> weeklyEvent){
-        if(weeklyEvent.containsKey("WEEKDAY")){
-            benefitList.put("WEEKDAY",weeklyEvent.get("WEEKDAY"));
-        } else if (weeklyEvent.containsKey("WEEKEND")) {
-            benefitList.put("WEEKEND",weeklyEvent.get("WEEKEND"));
+        if(weeklyEvent.containsKey("DESSERT") && weeklyEvent.get("DESSERT") != 0){
+            benefitList.put("DESSERT",weeklyEvent.get("DESSERT"));
+        } else if (weeklyEvent.containsKey("MAIN") && weeklyEvent.get("MAIN") != 0) {
+            benefitList.put("MAIN",weeklyEvent.get("MAIN"));
         }
     }
 
     public void calculateBenefitList(){
-        if(benefitList == null){
+        if(benefitList.isEmpty()){
             OutputView.printNone();
+            return;
+
         } else if (benefitList != null) {
 
             for (Map.Entry<String, Integer> entry : benefitList.entrySet()){

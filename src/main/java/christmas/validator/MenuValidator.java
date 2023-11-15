@@ -15,9 +15,9 @@ public class MenuValidator {
             return intValue;
 
         } catch (IllegalArgumentException e) {
-            System.out.println("숫자가 아님!");
+            throw new IllegalArgumentException("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
         }
-        return null;
+
     }
 
     private static void validateOrderNumber(int orderNumber){
@@ -29,8 +29,12 @@ public class MenuValidator {
     public static String validatefoodName(String name){
         List<String> foodNameList = Arrays.asList(FoodName.getAllFoodNames());
         if (!foodNameList.contains(name)) {
-            throw new IllegalArgumentException("요리 이름이 잘못 입력되었습니다. 확인해주세요");
+            throw new IllegalArgumentException("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
         }
         return name;
     }
+
+//    pubclic static String validateOnlyDrink(String name){
+//
+//    }
 }

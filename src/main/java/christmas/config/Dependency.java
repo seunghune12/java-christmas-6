@@ -1,10 +1,12 @@
 package christmas.config;
 
-import christmas.Repository.EventService;
+import christmas.service.EventService;
 import christmas.controller.EventController;
 import christmas.domain.Date;
 import christmas.EventPlanner;
 import christmas.domain.Menu;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Dependency {
 
@@ -21,10 +23,14 @@ public class Dependency {
     }
 
     public static Menu menu(){
-        return new Menu();
+        return new Menu(createMap());
     }
 
-    public static Date date(){
+    private static Date date(){
         return new Date();
+    }
+
+    private static Map<String,Integer> createMap(){
+        return new HashMap<>();
     }
 }

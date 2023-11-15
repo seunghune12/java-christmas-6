@@ -1,4 +1,4 @@
-package christmas.Repository;
+package christmas.service;
 
 import christmas.domain.Date;
 import christmas.domain.Menu;
@@ -25,13 +25,13 @@ public class EventService {
     public void printFristLineAndMenus() {
         date.printStartResultLine();
         menu.printOrderedMenus();
-
     }
 
     public void startCalculateAndPrint() {
         Price price = new Price(menu.calculateTotalPrice());
         runTotalPriceBeforeDiscount(price);
-        runEventPrices(price);
+        runChampagneEvent(price);
+        runEventList(price);
         runTotalBenefitPrice(price);
         runDiscountedPrice(price);
         runDecemberBadge(price);
@@ -45,25 +45,30 @@ public class EventService {
     private void runDiscountedPrice(Price price) {
         OutputView.printDiscountedPrice();
         price.printDiscountedTotalPrice();
+        OutputView.printEnter();
     }
 
     private void runTotalBenefitPrice(Price price){
         OutputView.printTotalDiscountPrice();
         price.printBenefitTotalPrice();
+        OutputView.printEnter();
     }
 
     private void runBenefitList(Price price){
         OutputView.printBenefitList();
         price.printBenefitListAndPrice();
-
+        OutputView.printEnter();
     }
 
-    private void runEventPrices(Price price) {
-        runChampagneEvent(price);
+    private void runEventList(Price price) {
+        calculateEventPrices(price);
+        runBenefitList(price);
+    }
+
+    private void calculateEventPrices(Price price) {
         price.saleChristmasEvent(date.calculateChristmasEvent());
         price.saleStarEvent(date.checkStarEvent());
         price.saleWeekdayAndWeekendEvent(calculateWeekEvent());
-        runBenefitList(price);
     }
 
     private Map<String, Integer> calculateWeekEvent() {
@@ -76,11 +81,13 @@ public class EventService {
     private void runChampagneEvent(Price price) {
         OutputView.printGiftMenu();
         price.printChampagneEvent();
+        OutputView.printEnter();
     }
 
     private void runTotalPriceBeforeDiscount(Price price) {
         OutputView.printTotalPriceBeforeDiscount();
         price.printTotalPrice();
+        OutputView.printEnter();
     }
 }
 
