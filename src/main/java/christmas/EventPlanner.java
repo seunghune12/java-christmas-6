@@ -11,22 +11,17 @@ public class EventPlanner {
 
     public void run(){
         startRequestInfo();
-        startOrder();
-        startEventCalculate();
-        printRecipt();
+        startOrderProgram();
+        runOrderProgram();
     }
 
     private void startRequestInfo(){
         eventController.requestInfo();
     }
 
-    private void startOrder(){eventController.startPrintingResult();}
+    private void startOrderProgram(){eventController.startPrintingResult();}
 
-    private void startEventCalculate(){
-        eventController.calculateEvent();
-    }
-
-    private void printRecipt(){eventController.printEventResult();
-
+    private void runOrderProgram(){
+        eventController.runDecemberEvent();
     }
 }

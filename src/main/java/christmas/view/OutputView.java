@@ -12,12 +12,20 @@ public class OutputView {
         System.out.println("<주문 메뉴>");
     }
 
-    public static void printTotalPrice(){
+    public static void printTotalPriceBeforeDiscount(){
         System.out.println("<할인 전 총주문 금액>");
     }
 
     public static void printGiftMenu(){
         System.out.println("<증정 메뉴>");
+    }
+
+    public static void printChampagne(){
+        System.out.println("샴페인 1개");
+    }
+
+    public static void printNone() {
+        System.out.println("없음");
     }
 
     public static void printBenefitList(){

@@ -3,6 +3,9 @@ package christmas.Repository;
 import christmas.domain.Date;
 import christmas.domain.Menu;
 import christmas.domain.Price;
+import christmas.view.OutputView;
+import java.util.HashMap;
+import java.util.Map;
 
 public class EventService {
     private final Menu menu;
@@ -25,20 +28,28 @@ public class EventService {
 
     }
 
-    public void calculatePrice(){
+    public void startCalculateAndPrint(){
+        Price price = calculateEvents();
+
+    }
+
+
+
+    private Price calculateEvents(){
         Price price = new Price(menu.calculateTotalPrice());
+        price.printTotalPrice();
+        price.printChampagneEvent();
         price.saleChristmasEvent(date.calculateChristmasEvent());
         price.saleStarEvent(date.checkStarEvent());
         price.saleWeekdayAndWeekendEvent(calculateWeekEvent());
 
+        return price;
     }
 
-    public void printCalculateResult(){
-
-    }
-
-    private int calculateWeekEvent(){
+    private Map<String, Integer> calculateWeekEvent(){
+        Map<String, Integer> weeklyEvent = new HashMap<>();
         String saleKind = date.checkSaleSort();
-        return menu.calculatedaysEvent(saleKind);
+        weeklyEvent.put(saleKind, menu.calculatedaysEvent(saleKind)) ;
+        return weeklyEvent;
     }
 }

@@ -1,41 +1,59 @@
 package christmas.domain;
 
+import christmas.view.OutputView;
+import java.util.Map;
+
 public class Price {
 
-    int beforePrice;
-    int afterPrice;
-    int discountPrice;
+    int totalPriceBeforeDiscount;
+
+    EventBenefits eventBenefits;
 
 
     public Price(int totalPrice) {
-        this.beforePrice = totalPrice;
-        this.afterPrice = totalPrice;
-        this.discountPrice = 0;
+        this.totalPriceBeforeDiscount = totalPrice;
+
     }
 
-    public boolean checkChapangeEvent(){
-        if(120000 <= beforePrice){
-            return true;
+    public void printTotalPrice(){
+
+        System.out.println(totalPriceBeforeDiscount + "원");
+    }
+
+
+    public void printChampagneEvent(){
+        if(120000 <= totalPriceBeforeDiscount){
+            OutputView.printChampagne();
+            eventBenefits.addChampagneBenefit(25000);
+        } else if (totalPriceBeforeDiscount < 120000) {
+            OutputView.printNone();
+
         }
-        return false;
+
     }
 
     public void saleChristmasEvent(int christmasEventDiscount){
-        this.afterPrice -= christmasEventDiscount;
-        this.discountPrice += christmasEventDiscount;
+        if (christmasEventDiscount != 0){
+            eventBenefits.addChristBenefit(christmasEventDiscount);
+        }
     }
 
     public void saleStarEvent(boolean starBoolean){
         if(starBoolean){
-            this.afterPrice -= 1000;
-            this.discountPrice += 1000;
+            eventBenefits.addStarBenefit(1000);
         }
     }
 
-    public void saleWeekdayAndWeekendEvent(int daySalePrice){
-        this.afterPrice -= daySalePrice;
-        this.discountPrice += daySalePrice;
+    public void saleWeekdayAndWeekendEvent(Map<String, Integer> weeklyEvent){
+        if(weeklyEvent.values() != null){
+            eventBenefits.addWeekdayAndWeekendBenefit(weeklyEvent);
+        }
     }
+
+    public void printBenefitListAndPrice(){
+        eventBenefits.calculateBenefitList();
+    }
+
 
 
 }

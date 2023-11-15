@@ -17,7 +17,13 @@ public class Date {
 
 
     public int calculateChristmasEvent() {
-        return this.date * 100 - 100 + 1000;
+        if(25 < date){
+            return 0;
+        }else if(1 <= date && date <= 25){
+            return 900 + date * 100 ;
+            //christmas 이벤트 할인 값 구하는 식
+        }
+        return 0;
     }
 
     public boolean checkStarEvent(){

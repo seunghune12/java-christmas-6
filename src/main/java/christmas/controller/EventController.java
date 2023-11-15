@@ -17,11 +17,9 @@ public class EventController {
         eventService.printFristLineAndMenus();
     }
 
-    public void calculateEvent() {
-        eventService.calculatePrice();
+    public void runDecemberEvent() {
+        eventService.startCalculateAndPrint();
     }
 
-    public void printEventResult(){
 
-    }
 }

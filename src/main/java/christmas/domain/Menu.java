@@ -24,8 +24,6 @@ public class Menu {
         for (Map.Entry<String, Integer> entry : menus.entrySet()) {
             String menuName = entry.getKey();
             int quantity = entry.getValue();
-
-
             int menuPrice = FoodName.getPriceByName(menuName);
             totalPrice += menuPrice * quantity;
         }
